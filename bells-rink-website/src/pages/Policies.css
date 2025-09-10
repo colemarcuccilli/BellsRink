@@ -1,0 +1,434 @@
+/* Policies Page Styles */
+.policies {
+  margin-top: 80px;
+}
+
+/* Hero Section */
+.policies-hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.policies-hero .hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Safety Rules Section */
+.safety-rules {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.safety-rules h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.rule-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #667eea;
+}
+
+.rule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.rule-card.safety {
+  border-left-color: #4CAF50;
+}
+
+.rule-card.warning {
+  border-left-color: #ff6b6b;
+}
+
+.rule-card.info {
+  border-left-color: #667eea;
+}
+
+.rule-card.important {
+  border-left-color: #ffd700;
+}
+
+.rule-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.rule-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.rule-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Behavior Policies */
+.behavior-policies {
+  padding: 5rem 0;
+  background: white;
+}
+
+.behavior-policies h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.policies-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.policy-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.policy-card.zero-tolerance {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.policy-card.age-restriction {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #333;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.policy-card.substance {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.policy-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.policy-icon {
+  font-size: 2rem;
+}
+
+.policy-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.policy-card p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Dress Code */
+.dress-code {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.dress-code h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.dress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.dress-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dress-card.allowed {
+  border-left: 5px solid #4CAF50;
+}
+
+.dress-card.not-allowed {
+  border-left: 5px solid #ff6b6b;
+}
+
+.dress-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.dress-card.allowed h3 {
+  color: #4CAF50;
+}
+
+.dress-card.not-allowed h3 {
+  color: #ff6b6b;
+}
+
+.dress-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.dress-card ul li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  color: #666;
+}
+
+.dress-card.allowed ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.dress-card.not-allowed ul li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.dress-note {
+  font-style: italic;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Facility Rules */
+.facility-rules {
+  padding: 5rem 0;
+  background: white;
+}
+
+.facility-rules h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.facility-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.facility-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.facility-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.facility-card p {
+  line-height: 1.6;
+}
+
+/* Help Contact */
+.help-contact {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+  color: white;
+  text-align: center;
+}
+
+.help-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.help-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.contact-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  background: white;
+  color: #ff6b6b;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+.contact-btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mission Footer */
+.mission-footer {
+  padding: 4rem 0;
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+}
+
+.mission-content h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.mission-content blockquote {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 4px solid #ffd700;
+  padding-left: 2rem;
+}
+
+.mission-content cite {
+  font-size: 1rem;
+  color: #ffd700;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .policies-hero .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .rules-grid,
+  .policies-content,
+  .dress-grid,
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .policy-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .safety-rules, .behavior-policies, .dress-code, .facility-rules, .help-contact, .mission-footer {
+    padding: 3rem 0;
+  }
+  
+  .safety-rules h2, .behavior-policies h2, .dress-code h2, .facility-rules h2, .mission-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .policies-hero .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .rule-card,
+  .policy-card,
+  .dress-card,
+  .facility-card {
+    padding: 1.5rem;
+  }
+  
+  .contact-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .mission-content blockquote {
+    padding-left: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

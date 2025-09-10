@@ -1,0 +1,28 @@
+# Bell's Skating Rink Image Requirements
+
+## Mascots
+- **Roller Roo**: Friendly kangaroo character with roller skates
+- **Kooky**: Fun character with roller skates
+
+## Stock Photos Needed
+- Generic roller skating action shots (no specific rink branding)
+- Families having fun roller skating
+- Birthday party celebrations
+- Food/pizza shots
+- Roller skate close-ups
+- Happy kids skating
+
+## Image Specifications
+- Format: JPG, PNG, or WebP
+- Size: Optimized for web (compress for fast loading)
+- Resolution: At least 1200px wide for hero images
+- Aspect ratios: Various (will be handled by CSS)
+
+## Usage Locations
+- Hero sections
+- About page story illustration
+- Service cards
+- Party packages
+- General decorative elements
+
+Replace this file with actual images when available.
