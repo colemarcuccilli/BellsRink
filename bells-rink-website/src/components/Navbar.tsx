@@ -14,6 +14,11 @@ const Navbar: React.FC = () => {
     return location.pathname === path ? 'active' : '';
   };
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <nav className="navbar">
       <div className="nav-container">
@@ -27,35 +32,35 @@ const Navbar: React.FC = () => {
           <Link 
             to="/" 
             className={`nav-link ${isActive('/')}`}
-            onClick={() => setIsMenuOpen(false)}
+            onClick={handleLinkClick}
           >
             Home
           </Link>
           <Link 
             to="/about" 
             className={`nav-link ${isActive('/about')}`}
-            onClick={() => setIsMenuOpen(false)}
+            onClick={handleLinkClick}
           >
             About
           </Link>
           <Link 
             to="/parties" 
             className={`nav-link ${isActive('/parties')}`}
-            onClick={() => setIsMenuOpen(false)}
+            onClick={handleLinkClick}
           >
             Parties
           </Link>
           <Link 
             to="/contact" 
             className={`nav-link ${isActive('/contact')}`}
-            onClick={() => setIsMenuOpen(false)}
+            onClick={handleLinkClick}
           >
             Contact
           </Link>
           <a 
             href="tel:+12607498214" 
             className="nav-cta"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={handleLinkClick}
           >
             Call Now
           </a>
