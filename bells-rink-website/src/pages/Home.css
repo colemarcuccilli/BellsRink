@@ -1,6 +1,8 @@
 /* Home Page Styles */
 .home {
   margin-top: 80px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Hero Section */
@@ -213,9 +215,20 @@
 
 .service-card-character {
   position: absolute;
-  right: -180px;
+  right: -120px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media screen and (max-width: 480px) {
+  .service-card-character {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    align-self: center;
+    margin: 1rem 0 0 0;
+  }
 }
 
 .service-card {
