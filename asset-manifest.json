@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/BellsRink/static/css/main.e4835d00.css",
+    "main.js": "/BellsRink/static/js/main.0709d2ff.js",
+    "static/js/453.768c551b.chunk.js": "/BellsRink/static/js/453.768c551b.chunk.js",
+    "index.html": "/BellsRink/index.html",
+    "main.e4835d00.css.map": "/BellsRink/static/css/main.e4835d00.css.map",
+    "main.0709d2ff.js.map": "/BellsRink/static/js/main.0709d2ff.js.map",
+    "453.768c551b.chunk.js.map": "/BellsRink/static/js/453.768c551b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4835d00.css",
+    "static/js/main.0709d2ff.js"
+  ]
+}
