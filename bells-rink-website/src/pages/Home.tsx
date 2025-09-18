@@ -1,4 +1,5 @@
 import React from 'react';
+import Newsletter from '../components/Newsletter';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -187,6 +188,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Section */}
+      <Newsletter />
     </div>
   );
 };
