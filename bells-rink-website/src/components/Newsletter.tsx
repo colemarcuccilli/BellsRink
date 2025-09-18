@@ -4,10 +4,6 @@ import './Newsletter.css';
 const Newsletter: React.FC = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [preferences, setPreferences] = useState({
-    email: true,
-    sms: false
-  });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
 
@@ -28,10 +24,22 @@ const Newsletter: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Require at least one contact method
+    if (!email && !phone) {
+      setStatus('error');
+      setMessage('Please provide either an email or phone number.');
+      return;
+    }
+
     setStatus('loading');
 
-    // Here you would integrate with your chosen email/SMS platform
-    // For now, we'll use Formspree to collect the data
+    // Determine what they're signing up for based on what they provided
+    const signupTypes = {
+      hasEmail: !!email,
+      hasSMS: !!phone
+    };
+
     try {
       const response = await fetch('https://formspree.io/f/xldwzory', {
         method: 'POST',
@@ -39,9 +47,9 @@ const Newsletter: React.FC = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email,
-          phone,
-          preferences,
+          email: email || 'Not provided',
+          phone: phone || 'Not provided',
+          signup_types: signupTypes,
           type: 'newsletter_signup',
           timestamp: new Date().toISOString()
         })
@@ -52,13 +60,12 @@ const Newsletter: React.FC = () => {
         setMessage('Thank you for subscribing! We\'ll keep you updated on special events and deals.');
         setEmail('');
         setPhone('');
-        setPreferences({ email: true, sms: false });
 
         // Track conversion in Google Analytics
         if (window.gtag) {
           window.gtag('event', 'newsletter_signup', {
             event_category: 'engagement',
-            event_label: `${preferences.email ? 'email' : ''}${preferences.sms ? '_sms' : ''}`
+            event_label: `${signupTypes.hasEmail ? 'email' : ''}${signupTypes.hasSMS ? '_sms' : ''}`
           });
         }
       } else {
@@ -87,43 +94,24 @@ const Newsletter: React.FC = () => {
           <div className="form-row">
             <input
               type="email"
-              placeholder="Your email address"
+              placeholder="Email for deals & events"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required={preferences.email}
               className="newsletter-input"
             />
             <input
               type="tel"
-              placeholder="Phone (optional for texts)"
+              placeholder="Phone for text alerts"
               value={phone}
               onChange={handlePhoneChange}
               className="newsletter-input"
               maxLength={14}
             />
           </div>
-          <div className="preference-row">
-            <label className="preference-label">
-              <input
-                type="checkbox"
-                checked={preferences.email}
-                onChange={(e) => setPreferences({...preferences, email: e.target.checked})}
-              />
-              <span>Email updates</span>
-            </label>
-            <label className="preference-label">
-              <input
-                type="checkbox"
-                checked={preferences.sms}
-                onChange={(e) => setPreferences({...preferences, sms: e.target.checked})}
-              />
-              <span>Text alerts</span>
-            </label>
-          </div>
           <button
             type="submit"
             className="newsletter-button"
-            disabled={status === 'loading' || (!preferences.email && !preferences.sms)}
+            disabled={status === 'loading'}
           >
             {status === 'loading' ? 'Subscribing...' : 'Join the Fun! 🎉'}
           </button>
