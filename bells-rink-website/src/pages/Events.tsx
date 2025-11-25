@@ -173,7 +173,7 @@ const Events: React.FC = () => {
               </div>
             </div>
             <div className="photo-card">
-              <img src="/images/KpopNight/rollerskatecloseupwide.webp" alt="Roller skate closeup" className="showcase-photo" />
+              <img src="/images/KpopNight/Rollerskatecloseupwide.webp" alt="Roller skate closeup" className="showcase-photo" />
               <div className="photo-overlay">
                 <div className="photo-caption">Classic Skating</div>
               </div>
