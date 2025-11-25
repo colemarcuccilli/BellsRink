@@ -29,22 +29,22 @@ const Navbar: React.FC = () => {
         </div>
         
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className={`nav-link ${isActive('/')}`}
             onClick={handleLinkClick}
           >
             Home
           </Link>
-          <Link 
-            to="/about" 
-            className={`nav-link ${isActive('/about')}`}
+          <Link
+            to="/events"
+            className={`nav-link ${isActive('/events')}`}
             onClick={handleLinkClick}
           >
-            About
+            Events
           </Link>
-          <Link 
-            to="/parties" 
+          <Link
+            to="/parties"
             className={`nav-link ${isActive('/parties')}`}
             onClick={handleLinkClick}
           >

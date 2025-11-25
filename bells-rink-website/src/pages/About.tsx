@@ -1,4 +1,5 @@
 import React from 'react';
+import PhotoGallery from '../components/PhotoGallery';
 import './About.css';
 
 const About: React.FC = () => {
@@ -170,6 +171,36 @@ const About: React.FC = () => {
               <p>We're proud to be part of the New Haven community and strive to create a welcoming space for everyone.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Rink Gallery */}
+      <section className="rink-gallery">
+        <div className="container">
+          <h2>Experience Our Beautiful Rink</h2>
+          <p className="gallery-subtitle">See our rink come alive with happy skaters!</p>
+          <PhotoGallery
+            photos={[
+              {
+                src: "/images/KpopNight/rollerskatecloseupwide2.webp",
+                alt: "Wide angle view of the skating experience",
+                caption: "Experience"
+              },
+              {
+                src: "/images/KpopNight/closeupkidsskate2.webp",
+                alt: "Kids having fun skating",
+                caption: "Memories"
+              },
+              {
+                src: "/images/KpopNight/closeuprinkrefereeskates.webp",
+                alt: "Referee skates on the rink floor",
+                caption: "Safe Fun"
+              }
+            ]}
+            columns={3}
+            showCaptions={true}
+            frameStyle="polaroid"
+          />
         </div>
       </section>
 

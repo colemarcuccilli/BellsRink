@@ -161,11 +161,11 @@ const Parties: React.FC = () => {
               </div>
               <div className="package-pricing">
                 <div className="price-main">
-                  <span className="price-cash">$380</span>
+                  <span className="price-cash">$390</span>
                   <span className="price-label">Cash</span>
                 </div>
                 <div className="price-alt">
-                  <span className="price-cc">$390</span>
+                  <span className="price-cc">$400</span>
                   <span className="price-label">Credit Card</span>
                 </div>
               </div>
@@ -192,6 +192,19 @@ const Parties: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Party Gallery */}
+      <section className="party-gallery">
+        <div className="container">
+          <h2>Your Party Could Look Like This!</h2>
+          <div className="photo-grid-2x2">
+            <img src="/images/KpopNight/Rollerskatecloseupwide.webp" alt="Wide angle view of skating party action" />
+            <img src="/images/KpopNight/busyrollerskatewideskinny.webp" alt="Panoramic view of the party rink" />
+            <img src="/images/KpopNight/closeupkidsskate2.webp" alt="Kids having fun at a birthday party" />
+            <img src="/images/KpopNight/closeupkidsskates.webp" alt="Close-up of kids roller skates" />
           </div>
         </div>
       </section>
@@ -241,6 +254,7 @@ const Parties: React.FC = () => {
                 📞 Call (260) 403-3766
               </a>
               <a href="/contact" className="btn-secondary">Get More Info</a>
+              <a href="/events" className="btn-tertiary">Check Out Our Special Events</a>
             </div>
           </div>
         </div>

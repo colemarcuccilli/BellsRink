@@ -500,25 +500,125 @@
 
 .upcoming-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .upcoming-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  justify-content: flex-start;
+  gap: 1rem;
   background: white;
-  padding: 1rem;
+  padding: 1.2rem;
   border-radius: 10px;
   font-weight: 500;
   color: #666;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.upcoming-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-item.special-event {
+  border-left: 4px solid #667eea;
 }
 
 .upcoming-icon {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: left;
+  flex: 1;
+}
+
+.event-details strong {
+  color: #333;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: 500;
+}
+
+.events-cta-home {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.view-all-events {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.view-all-events:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 5rem 0;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* 2x2 Photo Grid */
+.photo-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photo-grid-2x2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.photo-grid-2x2 img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+  .photo-grid-2x2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 /* Location Section */
@@ -635,9 +735,13 @@
   .services, .hours, .location {
     padding: 3rem 0;
   }
-  
+
   .services h2, .hours h2, .location h2 {
     font-size: 2rem;
+  }
+
+  .upcoming-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -659,5 +763,9 @@
   .cta-primary, .cta-secondary {
     width: 100%;
     text-align: center;
+  }
+
+  .upcoming-list {
+    grid-template-columns: 1fr;
   }
 }

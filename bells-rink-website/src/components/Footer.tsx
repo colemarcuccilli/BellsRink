@@ -26,7 +26,9 @@ const Footer: React.FC = () => {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
+            <li><Link to="/events">Events</Link></li>
             <li><Link to="/parties">Birthday Parties</Link></li>
+            <li><Link to="/policies">Safety & Policies</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
@@ -69,6 +71,9 @@ const Footer: React.FC = () => {
         <div className="footer-bottom-content">
           <p>&copy; {currentYear} Bell's Skating Rink. All rights reserved.</p>
           <p className="footer-tagline">Family-owned • Professional • Fun Guaranteed</p>
+          <p className="footer-legal-links">
+            <Link to="/terms">Terms of Service</Link> | <Link to="/privacy">Privacy Policy</Link>
+          </p>
         </div>
       </div>
     </footer>

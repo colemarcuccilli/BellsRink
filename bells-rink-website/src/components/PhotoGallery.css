@@ -1,0 +1,137 @@
+/* Photo Gallery - Natural Flow, NO BORDERS */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* All column layouts - flexible and flowing */
+.photo-gallery-columns-2,
+.photo-gallery-columns-3,
+.photo-gallery-columns-4 {
+  max-width: 100%;
+}
+
+/* Photo Frame - NO BORDERS, NO BACKGROUND */
+.photo-frame {
+  position: relative;
+  overflow: visible;
+  transition: all 0.4s ease;
+  flex: 1 1 auto;
+  min-width: 500px;
+  max-width: 800px;
+}
+
+/* Remove ALL frame styles - photos flow naturally */
+.frame-style-polaroid .photo-frame,
+.frame-style-neon .photo-frame,
+.frame-style-classic .photo-frame {
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.frame-style-polaroid .photo-frame::before,
+.frame-style-classic .photo-frame::before {
+  display: none;
+}
+
+.photo-inner {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  display: block;
+  background: transparent;
+}
+
+.frame-style-neon .photo-inner,
+.frame-style-classic .photo-inner {
+  border-radius: 0;
+  overflow: visible;
+}
+
+.photo-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+.photo-frame:hover .photo-image {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+}
+
+/* Captions hidden by default */
+.photo-caption {
+  display: none;
+}
+
+.frame-style-polaroid .photo-caption,
+.frame-style-neon .photo-caption,
+.frame-style-classic .photo-caption {
+  display: none;
+}
+
+/* Responsive - Stack on mobile */
+@media screen and (max-width: 1024px) {
+  .photo-frame {
+    min-width: 400px;
+    max-width: 700px;
+  }
+
+  .photo-gallery {
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .photo-frame {
+    min-width: 300px;
+    max-width: 100%;
+  }
+
+  .photo-gallery {
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .photo-frame {
+    min-width: 100%;
+  }
+
+  .photo-gallery {
+    gap: 2rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.photo-frame {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.photo-frame:nth-child(1) { animation-delay: 0.1s; }
+.photo-frame:nth-child(2) { animation-delay: 0.2s; }
+.photo-frame:nth-child(3) { animation-delay: 0.3s; }

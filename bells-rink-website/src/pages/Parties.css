@@ -288,6 +288,41 @@
   flex-shrink: 0;
 }
 
+/* Party Gallery */
+.party-gallery {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.party-gallery h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Override PhotoGallery for 2x2 grid on parties page */
+.party-gallery .photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.party-gallery .photo-frame {
+  min-width: auto;
+  max-width: none;
+}
+
+@media screen and (max-width: 768px) {
+  .party-gallery .photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 /* Party Details */
 .party-details {
   padding: 5rem 0;
@@ -373,7 +408,7 @@
   flex-wrap: wrap;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary, .btn-secondary, .btn-tertiary {
   padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
@@ -404,6 +439,18 @@
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
+}
+
+.btn-tertiary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-tertiary:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* Responsive Design */
@@ -483,7 +530,7 @@
     align-items: center;
   }
   
-  .btn-primary, .btn-secondary {
+  .btn-primary, .btn-secondary, .btn-tertiary {
     width: 100%;
     max-width: 300px;
   }

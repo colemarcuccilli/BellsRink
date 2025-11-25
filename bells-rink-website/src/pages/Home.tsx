@@ -147,21 +147,67 @@ const Home: React.FC = () => {
           </div>
 
           <div className="upcoming-sessions">
-            <h3>Coming Soon</h3>
+            <h3>Special Events This Month</h3>
             <div className="upcoming-list">
-              <div className="upcoming-item">
-                <span className="upcoming-icon">🎓</span>
-                <span>Monthly Afternoon Homeschool Skate</span>
+              <div className="upcoming-item special-event">
+                <span className="upcoming-icon">🎵</span>
+                <div className="event-details">
+                  <strong>Kpop Demon Hunter Skate</strong>
+                  <span className="event-date">Saturday, Dec 6th • 6:30-9PM</span>
+                </div>
               </div>
-              <div className="upcoming-item">
+              <div className="upcoming-item special-event">
+                <span className="upcoming-icon">🎁</span>
+                <div className="event-details">
+                  <strong>Toy Drive</strong>
+                  <span className="event-date">Sunday, Dec 14th</span>
+                </div>
+              </div>
+              <div className="upcoming-item special-event">
                 <span className="upcoming-icon">✝️</span>
-                <span>Monthly Christian Skate (All Christian Music)</span>
+                <div className="event-details">
+                  <strong>Praise & Worship Skate</strong>
+                  <span className="event-date">Monday, Dec 15th • 6-8PM</span>
+                </div>
               </div>
-              <div className="upcoming-item">
-                <span className="upcoming-icon">🎭</span>
-                <span>Special Theme Nights</span>
+              <div className="upcoming-item special-event">
+                <span className="upcoming-icon">🎓</span>
+                <div className="event-details">
+                  <strong>2 For 1 School's Out</strong>
+                  <span className="event-date">Monday, Dec 22nd • 12:30-3PM</span>
+                </div>
+              </div>
+              <div className="upcoming-item special-event">
+                <span className="upcoming-icon">🎸</span>
+                <div className="event-details">
+                  <strong>80's Night & 2 For 1</strong>
+                  <span className="event-date">Friday, Dec 29th • 12:30-3PM & 6:30-9PM</span>
+                </div>
+              </div>
+              <div className="upcoming-item special-event">
+                <span className="upcoming-icon">🎉</span>
+                <div className="event-details">
+                  <strong>Noon Year's Eve Kids Bash</strong>
+                  <span className="event-date">Wednesday, Dec 31st • 12-3PM</span>
+                </div>
               </div>
             </div>
+            <div className="events-cta-home">
+              <a href="/events" className="view-all-events">View All Events →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="gallery-section">
+        <div className="container">
+          <h2>See Our Rink in Action!</h2>
+          <div className="photo-grid-2x2">
+            <img src="/images/KpopNight/rollerskatecloseupwide3.webp" alt="Wide view of roller skating action" />
+            <img src="/images/KpopNight/busyrinkfeetangle.webp" alt="Close-up of skating action" />
+            <img src="/images/KpopNight/busynightkidsskating.webp" alt="Busy night with kids skating" />
+            <img src="/images/KpopNight/closeupneonadultsskates.webp" alt="Adult skaters with neon lights" />
           </div>
         </div>
       </section>

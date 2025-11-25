@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Policies.css';
 
 const Policies: React.FC = () => {
@@ -155,12 +156,33 @@ const Policies: React.FC = () => {
           <div className="mission-content">
             <h2>Our Commitment to You</h2>
             <blockquote>
-              "Bell's Skating Rink is committed to providing a family friendly/kid friendly 
-              environment for all to enjoy. These policies are put in place to 
-              ensure all of our wonderful customers have a safe, enjoyable, and 
+              "Bell's Skating Rink is committed to providing a family friendly/kid friendly
+              environment for all to enjoy. These policies are put in place to
+              ensure all of our wonderful customers have a safe, enjoyable, and
               memorable experience."
             </blockquote>
             <cite>— Eric & Stacy Dunlap, Owners</cite>
+          </div>
+        </div>
+      </section>
+
+      {/* Legal Documents Section */}
+      <section className="legal-documents">
+        <div className="container">
+          <h2>📄 Legal Documents</h2>
+          <div className="legal-docs-grid">
+            <Link to="/terms" className="legal-doc-card">
+              <div className="legal-doc-icon">📋</div>
+              <h3>Terms of Service</h3>
+              <p>Read our complete terms and conditions for using Bell's Skating Rink facility</p>
+              <span className="read-more">Read Full Document →</span>
+            </Link>
+            <Link to="/privacy" className="legal-doc-card">
+              <div className="legal-doc-icon">🔒</div>
+              <h3>Privacy Policy</h3>
+              <p>Learn how we collect, use, and protect your personal information</p>
+              <span className="read-more">Read Full Document →</span>
+            </Link>
           </div>
         </div>
       </section>

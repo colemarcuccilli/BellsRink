@@ -201,22 +201,44 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-      {/* Map Placeholder Section */}
+      {/* Gallery Section */}
+      <section className="contact-gallery-section">
+        <div className="container">
+          <h2>Come Visit Us!</h2>
+          <div className="photo-grid-2x2">
+            <img src="/images/KpopNight/rollerskatecloseupwide4.webp" alt="Wide view of our skating rink" />
+            <img src="/images/KpopNight/rollerskatecloseupwide5.webp" alt="Action on the rink floor" />
+          </div>
+        </div>
+      </section>
+
+      {/* Google Maps Section */}
       <section className="map-section">
         <div className="container">
           <h2>Find Us</h2>
-          <div className="map-placeholder">
-            <div className="map-content">
-              <div className="map-icon">📍</div>
-              <h3>Bell's Skating Rink</h3>
-              <p>7009 IN-930, Fort Wayne, IN 46803</p>
-              <a 
-                href="https://maps.app.goo.gl/dC9siLxcJ4K9FvX59" 
-                target="_blank" 
+          <div className="map-container">
+            <iframe
+              title="Bell's Skating Rink Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.8!2d-85.0493289!3d41.0697206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8815e5c7e2e7e7e7%3A0x1234567890abcdef!2s7009%20IN-930%2C%20Fort%20Wayne%2C%20IN%2046803!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style={{ border: 0, borderRadius: '20px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="map-info">
+              <p>
+                <strong>Bell's Skating Rink</strong><br />
+                7009 IN-930, Fort Wayne, IN 46803
+              </p>
+              <a
+                href="https://maps.app.goo.gl/dC9siLxcJ4K9FvX59"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="map-button"
+                className="map-link-button"
               >
-                Open in Google Maps
+                Open in Google Maps →
               </a>
             </div>
           </div>

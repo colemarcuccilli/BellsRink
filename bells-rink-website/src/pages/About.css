@@ -388,6 +388,27 @@
   opacity: 0.9;
 }
 
+/* Rink Gallery */
+.rink-gallery {
+  padding: 5rem 0;
+  background: white;
+}
+
+.rink-gallery h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.rink-gallery .gallery-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
 /* Skates Showcase */
 .skates-showcase {
   padding: 4rem 0;
