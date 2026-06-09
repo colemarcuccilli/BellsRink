@@ -312,10 +312,10 @@ const Home: React.FC = () => {
       <section id="hours" className="hours">
         <div className="container">
           <div className="section-eyebrow">
-            <span className="eyebrow-tag">When to roll</span>
+            <span className="eyebrow-tag">Summer hours</span>
           </div>
           <h2 className="poster-headline section-headline">
-            Public skating, <span className="script-accent">all week long.</span>
+            Summer skating, <span className="script-accent">all week long.</span>
           </h2>
           <div className="sessions-grid">
             <div className="session-card special">
@@ -325,6 +325,20 @@ const Home: React.FC = () => {
               </div>
               <div className="session-price">$10 Admission</div>
               <p>21+ Only • DJ Krazy K • Includes skate rental</p>
+            </div>
+
+            <div className="session-card deal">
+              <div className="session-header">
+                <h3>Wednesday Dollar Night</h3>
+                <div className="session-time">6:00 PM - 8:00 PM</div>
+              </div>
+              <div className="session-pricing">
+                <div className="session-price">$1 Admission</div>
+                <div className="family-deal">
+                  <strong>$1 Skate Rental</strong>
+                  <p>The best deal in town!</p>
+                </div>
+              </div>
             </div>
 
             <div className="session-card popular">
@@ -352,13 +366,13 @@ const Home: React.FC = () => {
 
             <div className="session-card glow">
               <div className="session-header">
-                <h3>Saturday Night Family Roll - Glow</h3>
-                <div className="session-time">6:30 PM - 9:00 PM</div>
+                <h3>Saturday Night with DJ Krazy K</h3>
+                <div className="session-time">8:00 PM - 10:00 PM</div>
               </div>
-              <div className="session-price">$10 per skater</div>
+              <div className="session-price">$10 Admission</div>
               <div className="special-feature">
                 <span className="glow-icon">✨</span>
-                <p>Free glow stick for all skaters!</p>
+                <p>Starting 6/27 • Skates included</p>
               </div>
             </div>
 
@@ -374,6 +388,15 @@ const Home: React.FC = () => {
                   <p>Includes pizza & pitcher of pop!</p>
                 </div>
               </div>
+            </div>
+
+            <div className="session-card special">
+              <div className="session-header">
+                <h3>Sunday Adult Skate Night</h3>
+                <div className="session-time">8:00 PM - 11:00 PM</div>
+              </div>
+              <div className="session-price">$10 Admission</div>
+              <p>18+ Only • DJ Krazy K • Includes skate rental</p>
             </div>
 
             <div className="session-character-only">
