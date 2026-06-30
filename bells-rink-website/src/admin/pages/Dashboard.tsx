@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
               value={String(stats.upcomingParties)}
               icon="🎉"
               tint="blue"
-              sub={`${stats.pendingBookings} new inquiry${stats.pendingBookings === 1 ? '' : 's'} to answer`}
+              sub={`${stats.pendingBookings} new ${stats.pendingBookings === 1 ? 'inquiry' : 'inquiries'} to answer`}
             />
           </div>
 
