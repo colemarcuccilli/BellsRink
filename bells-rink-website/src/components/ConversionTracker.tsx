@@ -2,31 +2,74 @@ import { useEffect } from 'react';
 import { track } from '../lib/analytics';
 
 /**
- * Sitewide conversion tracking. Mounts once and listens for clicks on the
- * links that signal real intent for a phone-driven rink business:
- *   • tel:  links  → "Call Click"  (the #1 conversion — bookings happen by phone)
- *   • mailto links → "Email Click"
- *   • map links    → "Directions Click"  (someone planning a visit)
- * Each event records which page it came from, so you can see (for example)
- * how many calls the Parties page drives vs. the Home page.
+ * Sitewide interaction tracking. Mounts once and delegates all clicks,
+ * turning the meaningful ones into named analytics events:
+ *
+ *   tel: link            → "Call Click"       (the #1 conversion — bookings by phone)
+ *   mailto: link         → "Email Click"
+ *   map link             → "Directions Click"
+ *   social link          → "Social Click"     (Facebook/Instagram/TikTok/YouTube)
+ *   other external link  → "Outbound Click"
+ *   internal CTA button  → "CTA Click"         (which button drove intent + where it goes)
+ *
+ * Page-to-page navigation is already captured automatically as page views,
+ * so this layer focuses on the clicks that page views can't tell you about.
+ * Every event records the page it happened on.
  */
+
+const SOCIAL = /facebook|instagram|tiktok|youtube|twitter|x\.com|linkedin|snapchat/i;
+// Classes that mark an element as a call-to-action across the site.
+const CTA_CLASS = /\b(cta|btn-arrow|ann-btn|view-all|anniversary-cta|nav-cta|character-cta|phone-cta|link-button|map-link)/i;
+
+function label(el: Element): string {
+  return (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+}
+
+function hostOf(href: string): string {
+  try {
+    return new URL(href).hostname.replace(/^www\./, '');
+  } catch {
+    return '';
+  }
+}
+
 const ConversionTracker: React.FC = () => {
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       const el = e.target as HTMLElement | null;
-      const anchor = el && el.closest ? el.closest('a') : null;
-      if (!anchor) return;
-      const href = anchor.getAttribute('href') || '';
+      if (!el || !el.closest) return;
       const page = window.location.pathname;
 
-      if (href.startsWith('tel:')) {
-        track('Call Click', { page, number: href.replace('tel:', '') });
-      } else if (href.startsWith('mailto:')) {
-        track('Email Click', { page, to: href.replace('mailto:', '') });
-      } else if (/maps\.app\.goo\.gl|google\.[^/]+\/maps/.test(href)) {
-        track('Directions Click', { page });
+      const anchor = el.closest('a');
+      if (anchor) {
+        const href = anchor.getAttribute('href') || '';
+
+        if (href.startsWith('tel:')) return track('Call Click', { page, number: href.slice(4) });
+        if (href.startsWith('mailto:')) return track('Email Click', { page, to: href.slice(7) });
+        if (/maps\.app\.goo\.gl|google\.[^/]+\/maps/.test(href)) return track('Directions Click', { page });
+
+        if (/^https?:\/\//i.test(href)) {
+          const host = hostOf(href);
+          if (host && !host.endsWith('bellsrink.com')) {
+            if (SOCIAL.test(host)) return track('Social Click', { page, network: host });
+            return track('Outbound Click', { page, to: host });
+          }
+        }
+
+        // Internal call-to-action link (e.g. "Book a Party", "View Hours", "Upload Photos")
+        if (CTA_CLASS.test(anchor.className || '')) {
+          return track('CTA Click', { page, label: label(anchor), to: href });
+        }
+        return;
+      }
+
+      // Call-to-action <button> (not a form submit — those fire their own events)
+      const btn = el.closest('button');
+      if (btn && btn.getAttribute('type') !== 'submit' && CTA_CLASS.test(btn.className || '')) {
+        track('CTA Click', { page, label: label(btn) });
       }
     };
+
     document.addEventListener('click', handler, { capture: true });
     return () => document.removeEventListener('click', handler, { capture: true } as any);
   }, []);

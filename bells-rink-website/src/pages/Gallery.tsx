@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PhotoUpload from '../components/PhotoUpload';
+import { track } from '../lib/analytics';
 import './Gallery.css';
 
 interface Photo {
@@ -42,6 +43,7 @@ const Gallery: React.FC = () => {
   const openLightbox = (photo: Photo) => {
     setLightboxPhoto(photo);
     document.body.style.overflow = 'hidden';
+    track('Photo View', { photo: photo.alt });
   };
 
   const closeLightbox = () => {
