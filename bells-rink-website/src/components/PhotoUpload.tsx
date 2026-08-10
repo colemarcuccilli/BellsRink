@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { uploadCommunityPhoto } from '../lib/supabase';
+import { track } from '../lib/analytics';
 import './PhotoUpload.css';
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
@@ -84,6 +85,7 @@ const PhotoUpload: React.FC = () => {
         setProgress(Math.round(((i + 1) / files.length) * 100));
       }
       setUploadState('success');
+      track('Photo Upload', { count: files.length });
       // Clean up previews
       previews.forEach(p => URL.revokeObjectURL(p));
       setFiles([]);

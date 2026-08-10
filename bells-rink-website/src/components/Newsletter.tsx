@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { track } from '../lib/analytics';
 import './Newsletter.css';
 
 const Newsletter: React.FC = () => {
@@ -61,13 +62,10 @@ const Newsletter: React.FC = () => {
         setEmail('');
         setPhone('');
 
-        // Track conversion in Google Analytics
-        if (window.gtag) {
-          window.gtag('event', 'newsletter_signup', {
-            event_category: 'engagement',
-            event_label: `${signupTypes.hasEmail ? 'email' : ''}${signupTypes.hasSMS ? '_sms' : ''}`
-          });
-        }
+        // Track conversion (Vercel Analytics + Google Analytics)
+        track('Newsletter Signup', {
+          method: `${signupTypes.hasEmail ? 'email' : ''}${signupTypes.hasSMS ? '+sms' : ''}` || 'unknown',
+        });
       } else {
         setStatus('error');
         setMessage('Oops! Something went wrong. Please try again.');

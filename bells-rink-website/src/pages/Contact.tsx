@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { track } from '../lib/analytics';
 import './Contact.css';
 
 const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzpxgZEf9siRcwvGQbMkudtZ9SzV3FSaeItjWFB9Qm7ZhVJizM5NZDkojakcUvT0Sn7BQ/exec';
@@ -63,6 +64,7 @@ const Contact: React.FC = () => {
 
       // With no-cors mode, we can't read the response, so we assume success
       setStatus('succeeded');
+      track('Contact Form Submit', { subject: formData.subject || 'unspecified' });
     } catch (error) {
       setStatus('error');
       setErrorMessage('Something went wrong. Please try again or call us directly.');

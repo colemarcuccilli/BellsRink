@@ -13,6 +13,8 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import Footer from './components/Footer';
+import ConversionTracker from './components/ConversionTracker';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+        <ConversionTracker />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -36,6 +39,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <Analytics />
       </div>
     </Router>
   );
